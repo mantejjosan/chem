@@ -1,9 +1,9 @@
-# Background
+# Fuel Cell
+
+The story of the fuel cell begins in the early 19th century, with Sir William Grove, a Welsh judge, inventor, and physicist, often credited as the "father of the fuel cell." He built the first crude fuel cell in 1839 in Swansea, Wales, during his experiments with electricity and electrochemical reactions.
 
 ![William Grove](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/William_Robert_Grove_2.jpg/330px-William_Robert_Grove_2.jpg)  
 *Sir William Robert Grove, the "father of the fuel cell"*
-
-The story of the fuel cell begins in the early 19th century, with Sir William Grove, a Welsh judge, inventor, and physicist, often credited as the "father of the fuel cell." He built the first crude fuel cell in 1839 in Swansea, Wales, during his experiments with electricity and electrochemical reactions.
 
 His work on the fuel cell was driven by a curiosity about converting chemical energy directly into electrical energy in a cleaner and potentially more efficient way.
 

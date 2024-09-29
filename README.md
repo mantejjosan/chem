@@ -4,12 +4,29 @@
 1. Have an HTML file.
 
 ## Steps
-1. Include mathjax cdn(Content Delivery Network)
+1. Include Mathjax cdn(Content Delivery Network)
 2. Set up the tex engine to render text enclosed in required characters.
+> Tip: To do both these steps copy this snippet whose usage is explained below in the [sample code](#sample-code):
+> ```
+> <script type="text/javascript" async
+>       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+>       id="MathJax-script"
+>       data-mathjax-config='{
+>         "loader": {
+>           "load": ["[tex]/mhchem"]
+>         },
+>         "tex": {
+>           "inlineMath": [["$", "$"], ["\\(", "\\)"]],
+>           "displayMath": [["$$", "$$"], ["\\[", "\\]"]],
+>           "packages": {"[+]": ["mhchem"]}
+>         }
+>       }'>
+>   </script>
+> ```
 
-## Example Code
+## Sample Code
 
-Here we have included the Mathjax javascript library which is capable of rendering both math formulae and chemical equations.
+Here we have included the Mathjax javascript library which can render math formulae and chemical equations.
 TeX is a typesetting system that is widely used for mathematical and scientific documents.  
 It allows you to create complex mathematical expressions, symbols, and equations with minimal effort.  
 

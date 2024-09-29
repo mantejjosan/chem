@@ -31,6 +31,24 @@
         }
       }'>
     </script>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false }); // Prevent automatic rendering
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all code blocks with class 'mermaid'
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+            mermaidBlocks.forEach(block => {
+                const code = block.textContent; // Get the content of the code block
+                const mermaidDiv = document.createElement('div');
+                mermaidDiv.classList.add('mermaid');
+                mermaidDiv.textContent = code; // Set the content to the div
+                block.parentNode.replaceChild(mermaidDiv, block); // Replace code block with div
+            });
+            mermaid.init(); // Render all mermaid diagrams
+        });
+    </script>
+    
 {% seo %}
 
 {% include head-custom.html %}

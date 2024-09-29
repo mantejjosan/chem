@@ -34,14 +34,13 @@ MathJax supports TeX syntax, allowing for dynamic rendering of math content in w
 By configuring MathJax, you can customize how equations are displayed,
 including support for inline or block-level formulas and chemical notation through the `mhchem` package.
 
-
 ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathJax with $$ for Math</title>
+    <title>MathJax with $$ for Math and Mermaid</title>
     <script type="text/javascript" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
         id="MathJax-script"
@@ -55,6 +54,23 @@ including support for inline or block-level formulas and chemical notation throu
             "packages": {"[+]": ["mhchem"]}
           }
         }'>
+    </script>
+    <!-- Include the Mermaid library -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false }); // Prevent automatic rendering
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all code blocks with class 'mermaid'
+            const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+            mermaidBlocks.forEach(block => {
+                const code = block.textContent; // Get the content of the code block
+                const mermaidDiv = document.createElement('div');
+                mermaidDiv.classList.add('mermaid');
+                mermaidDiv.textContent = code; // Set the content to the div
+                block.parentNode.replaceChild(mermaidDiv, block); // Replace code block with div
+            });
+            mermaid.init(); // Render all mermaid diagrams
+        });
     </script>
 </head>
 <body>
@@ -85,6 +101,14 @@ including support for inline or block-level formulas and chemical notation throu
     <p>
         $$ \ce{CH4 + 2O2 -> CO2 + 2H2O} $$
     </p>
+
+    <!-- Example of a Mermaid Diagram in a Code Block -->
+    <pre><code class="language-mermaid">
+        graph TD;
+        A[Start] --> B{Is it working?};
+        B -- Yes --> C[Great!];
+        B -- No --> D[Check the code];
+    </code></pre>
 
 </body>
 </html>

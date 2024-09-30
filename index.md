@@ -69,22 +69,12 @@ Works on the principle of redox reaction. In an Alkaline Fuel Cell (AFC), hydrog
 The reactions occurring at each electrode are as follows:
 
 ### Reactions
-- **At the Anode:**
-  \[
-  2H_2 \rightarrow 4H^+ + 4e^-
-  \]
-  Hydrogen gas is oxidized, producing protons and electrons.
 
-- **At the Cathode:**
-  \[
-  O_2 + 4H^+ + 4e^- \rightarrow 2H_2O
-  \]
-  Oxygen gas combines with protons and electrons to form water.
+At the Anode: \ce{2H2 -> 4H+ + 4e-} Hydrogen gas is oxidized, producing protons and electrons.
 
-- **Overall Reaction:**
-  \[
-  2H_2 + O_2 \rightarrow 2H_2O + \text{Electricity} + \text{Heat}
-  \]
+At the Cathode: \ce{O2 + 4H+ + 4e- -> 2H2O} Oxygen gas combines with protons and electrons to form water.
+
+Overall Reaction: \ce{2H2 + O2 -> 2H2O + \text{Electricity} + \text{Heat}}
 
 The protons move through the electrolyte to the cathode, while the electrons flow through an external circuit, creating electricity. At the cathode, oxygen combines with the protons and electrons to form water as a byproduct, thus completing the electrochemical cycle.
 

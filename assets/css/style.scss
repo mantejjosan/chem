@@ -5,23 +5,19 @@
 
 /*Note: If you'd like to change the theme's Sass variables, you must set new values before the @import line in your stylesheet.*/
 
-table {
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-  white-space: nowrap;
-}
-
-table th, table td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
 @media screen and (max-width: 720px) {
   table {
-    display: block;
-    width: 100%;
-    overflow-x: scroll;
+    display: block !important;
+    width: 100vw !important;
+    overflow-x: auto !important; /* Use auto to display the scrollbar only when necessary */
+    
+    white-space: nowrap !important; /* Prevents the table from wrapping content */
+  
   }
+  table th, table td {
+  padding: 8px !important;
+  text-align: left;
+  border-bottom: 1px solid #ddd !important;
+  }
+  
 }

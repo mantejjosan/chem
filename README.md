@@ -1,12 +1,11 @@
-# How to render chemical and mathematical equations
+# How to render Chemical and Mathematical Equations + Mermaid Diagrams
 
 ## Prerequisites
 1. Have an HTML file.
 
 ## Steps
-1. Include Mathjax cdn(Content Delivery Network)
-2. Set up the tex engine to render text enclosed in required characters.
-> Tip: To do both these steps copy this snippet whose usage is explained below in the [sample code](#sample-code):
+
+> 1. To include MathJax CDN for rendering chemical and mathematical equations copy the following script tag and paste inside the head(or body) tag.
 > ```
 > <script type="text/javascript" async
 >       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -24,7 +23,28 @@
 >   </script>
 > ```
 
-## Sample Code
+
+> 2. To include mermaid renderer copy the following into the head(or body) tag of your html
+> ```
+> <script type="module">
+>       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+>       mermaid.initialize({ startOnLoad: false }); // Prevent automatic rendering
+>       document.addEventListener('DOMContentLoaded', function() {
+>           // Find all code blocks with class 'mermaid'
+>           const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+>           mermaidBlocks.forEach(block => {
+>               const code = block.textContent; // Get the content of the code block
+>               const mermaidDiv = document.createElement('div');
+>               mermaidDiv.classList.add('mermaid');
+>               mermaidDiv.textContent = code; // Set the content to the div
+>               block.parentNode.replaceChild(mermaidDiv, block); // Replace code block with div
+>           });
+>           mermaid.init(); // Render all mermaid diagrams
+>       });
+>   </script>
+    
+
+## Explanation and Example
 
 Here we have included the Mathjax javascript library which can render math formulae and chemical equations.
 TeX is a typesetting system that is widely used for mathematical and scientific documents.  

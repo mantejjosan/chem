@@ -18,9 +18,10 @@ table th, table td {
   border-bottom: 1px solid #ddd;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   table {
     display: block;
     width: 100%;
+    overflow-x: scroll;
   }
 }
